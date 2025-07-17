@@ -1,4 +1,4 @@
-import { SentioData } from 'sentio-core/src/index.js';
+import { SentioData } from '../../sentio-core/src/index.js';
 
 export function visualizeAttention(data: SentioData): void {
   if (data.attention && data.attention.length > 0) {
