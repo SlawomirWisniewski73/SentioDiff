@@ -1,5 +1,7 @@
 import Ajv from 'ajv';
-import { SelfModelEntity } from 'sentio-core';
+// PONIŻEJ ZMIANA: Używamy ścieżki względnej, aby wskazać plik index w module core.
+// Dodajemy też rozszerzenie .js, co jest dobrą praktyką w modułach ES.
+import { SelfModelEntity } from '../../sentio-core/src/index.js';
 
 const selfModelSchema = {
   type: "object",
