@@ -1,3 +1,5 @@
+// ########## POPRAWIONY KOD DLA sentio-core/src/types.ts ##########
+
 export interface Track<T = any> {
   id: string;
   kind: string; // np. "geometry", "signal"
@@ -16,16 +18,21 @@ export interface TraceEvent {
   action: string;
 }
 
-export interface SelfModelSummary {
-  score: number;
-  description: string;
+// NOWA, POPRAWNA definicja dla SelfModelEntity
+// Zastępuje ona stary interfejs SelfModelSummary
+export interface SelfModelEntity {
+  id: string;
+  name: string;
+  description?: string;
+  children?: SelfModelEntity[]; // Umożliwia zagnieżdżanie
 }
 
+// Główny interfejs, teraz używający SelfModelEntity
 export interface SentioData {
   name?: string;
-  tracks: Track[];
+  tracks: Track<any>[]; // Używamy generycznego Track
   differences?: Difference[];
   trace?: TraceEvent[];
   attention?: number[][];
-  selfModel?: SelfModelSummary;
+  selfModel?: SelfModelEntity; // Zaktualizowane użycie
 }
