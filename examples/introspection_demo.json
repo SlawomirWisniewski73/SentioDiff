@@ -1,1 +1,19 @@
+{
+  "name": "Introspection Demo",
+  "tracks": [],
+  "trace": [
+    { "step": 1, "action": "start" },
+    { "step": 2, "action": "compute" },
+    { "step": 3, "action": "finish" }
+  ],
+  "attention": [
+    [0.1, 0.9],
+    [0.8, 0.2],
+    [0.5, 0.5]
+  ],
+  "selfModel": {
+    "score": 0.85,
+    "description": "Example self-evaluation"
+  }
+}
 
