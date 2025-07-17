@@ -4,6 +4,6 @@ dist/
 
 # OS / editor files
 .DS_Store
-*.log
+.log
 .env
 
