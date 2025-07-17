@@ -67,7 +67,7 @@ W katalogu `scripts/` znajdują się narzędzia:
 
 ```bash
 npx ts-node scripts/sentio-validate.ts examples/basic_example.json
-npx ts-node scripts/sentio-render.ts examples/basic_example.json
+npx ts-node scripts/sentio-renderer.ts examples/basic_example.json
 npx ts-node scripts/sentio-to-vector.ts examples/basic_example.json
 ```
 
@@ -260,7 +260,7 @@ Available in the `scripts/` folder:
 
 ```bash
 npx ts-node scripts/sentio-validate.ts examples/basic_example.json
-npx ts-node scripts/sentio-render.ts examples/basic_example.json
+npx ts-node scripts/sentio-renderer.ts examples/basic_example.json
 npx ts-node scripts/sentio-to-vector.ts examples/basic_example.json
 ```
 
