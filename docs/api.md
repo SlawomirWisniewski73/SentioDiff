@@ -5,7 +5,7 @@ SentioDiff można używać poprzez interfejs wiersza poleceń (CLI) lub jako bib
 ## CLI (Narzędzia wiersza poleceń)
 Po zainstalowaniu paczki dostępne są następujące komendy:
 - **`sentio-validate <plik.json>`** – waliduje podany plik JSON z danymi względem schematu `sentio.schema.json`. Wypisuje wynik walidacji (sukces lub ewentualne błędy).
-- **`sentio-render <tryb> <plik.json>`** – renderuje wizualizację danych do formatu graficznego:
+- **`sentio-renderer <tryb> <plik.json>`** – renderuje wizualizację danych do formatu graficznego:
   - `tryb` może być `svg` (renderowanie 2D do pliku SVG) lub `three` (renderowanie 3D przy użyciu Three.js).
   - Dla `svg` wynikowy plik zostanie zapisany jako **output.svg** w bieżącym folderze.  
     Dla `three` (3D) narzędzie uruchomi proces renderowania 3D (w implementacji szkieletowej jest to symulowane komunikatem w konsoli).
