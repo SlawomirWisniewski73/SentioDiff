@@ -30,3 +30,20 @@ console.log('SVG output:', svgOutput);
 const vector = toVector(data);
 console.log('Vector:', vector);
 
+# SentioDiff API Reference
+
+## `parseSentio(json: any): SentioDoc`
+Parses a SentioDiff JSON document into internal object structure.
+
+## `validateSentio(doc: any): boolean`
+Validates a SentioDiff document using the bundled JSON Schema.
+
+## `SVGTrackView.render(container, doc)`
+Renders 2D geometric tracks (rects etc.) into an HTML `<svg>` container.
+
+## `ThreeTrackView.render(container)`
+Renders a basic rotating cube into a 3D WebGL scene using Three.js.
+
+## `importVectorDiff(vectordiff)`
+Converts a VectorDiff document to basic SentioDiff format.
+
