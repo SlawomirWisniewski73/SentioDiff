@@ -1,4 +1,4 @@
-import { SentioData } from 'sentio-core/src/index.js';
+import { SentioData } from '../../sentio-core/src/index.js';
 
 export function toVector(data: SentioData): number[] {
   // Łączy wszystkie dane ze ścieżek w jeden wektor (przykładowa implementacja)
