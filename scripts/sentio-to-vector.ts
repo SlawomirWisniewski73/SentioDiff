@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { toVector } from '../sentio-bridge/src/vectorDiffAdapter';
+import { toVector } from '../sentio-bridge/src/vectorDiffAdapter.js';
 import * as fs from 'fs';
 
 const [inputPath, outputPath] = process.argv.slice(2);
