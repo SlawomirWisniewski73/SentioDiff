@@ -1,4 +1,5 @@
 {
+  "version": "0.1",
   "name": "Introspection Demo",
   "tracks": [],
   "trace": [
@@ -16,4 +17,3 @@
     "description": "Example self-evaluation"
   }
 }
-
