@@ -1,1 +1,20 @@
+{
+  "name": "sentio-core",
+  "version": "0.1.0",
+  "description": "Core module for SentioDiff, providing base types and functions for introspection.",
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/selfModel.js",
+  "types": "dist/selfModel.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "tslib": "^2.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
 
