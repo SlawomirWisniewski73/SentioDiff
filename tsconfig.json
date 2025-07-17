@@ -1,1 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "rootDir": ".",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "sentio-core/*": ["sentio-core/src/*"],
+      "sentio-viz/*": ["sentio-viz/src/*"],
+      "sentio-introspect/*": ["sentio-introspect/src/*"],
+      "sentio-bridge/*": ["sentio-bridge/src/*"]
+    }
+  },
+  "include": [
+    "sentio-core/src",
+    "sentio-viz/src",
+    "sentio-introspect/src",
+    "sentio-bridge/src",
+    "scripts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "examples",
+    "docs"
+  ]
+}
 
