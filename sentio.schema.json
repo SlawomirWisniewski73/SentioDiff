@@ -1,1 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/sentio.schema.json",
+  "title": "SentioDiff Schema",
+  "description": "Schema for SentioDiff dynamic data and AI introspection format.",
+  "type": "object",
+  "required": [ "version", "tracks" ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Format version identifier (e.g., '0.1')."
+    },
+    "tracks": {
+      "type": "array",
+      "description": "List of data tracks describing dynamic content.",
+      "items": { "$ref": "#/definitions/track" }
+    },
+    "introspection": {
+      "$ref": "#/definitions/introspectionData"
+    }
+  },
+  "definitions": {
+    "track": {
+      "type": "object",
+      "required": [ "id", "kind", "data" ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the track."
+        },
+        "kind": {
+          "type": "string",
+          "description": "Type of track (e.g., 'geometry', 'signal', etc.).",
+          "enum": [ "geometry", "signal", "model", "introspection", "other" ]
+        },
+        "data": {
+          "type": "object",
+          "description": "Track data container (structure varies by kind).",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Descriptor of the data type (e.g., for geometry: shape type, for signal: data type)."
+            },
+            "samples": {
+              "type": "array",
+              "description": "(For signal tracks) Array of sampled values over time.",
+              "items": { "$ref": "#/definitions/samplePoint" }
+            },
+            "keyframes": {
+              "type": "array",
+              "description": "(For geometry tracks) Array of key frames defining transformations over time.",
+              "items": { "$ref": "#/definitions/keyframe" }
+            },
+            "frames": {
+              "type": "array",
+              "description": "(Alternative for geometry tracks) Array of absolute frames positions/orientations.",
+              "items": { "$ref": "#/definitions/frame" }
+            },
+            "units": {
+              "type": "string",
+              "description": "Units of measurement for values (if applicable, e.g., 'm/s')."
+            }
+          },
+          "additionalProperties": true
+        },
+        "meta": {
+          "type": "object",
+          "description": "Optional metadata for the track (domain-specific annotations).",
+          "additionalProperties": true
+        }
+      }
+    },
+    "samplePoint": {
+      "type": "object",
+      "required": [ "t", "value" ],
+      "properties": {
+        "t": { "type": "number", "description": "Time or sequence index of the sample." },
+        "value": { "type": "number", "description": "Numeric value of the sample at time t." }
+      }
+    },
+    "keyframe": {
+      "type": "object",
+      "required": [ "t" ],
+      "properties": {
+        "t": { "type": "number", "description": "Time of this keyframe." },
+        "position": {
+          "type": "object",
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" },
+            "z": { "type": "number" }
+          },
+          "description": "Position coordinates at this keyframe (for geometric tracks)."
+        },
+        "rotation": {
+          "type": "object",
+          "properties": {
+            "angle": { "type": "number" },
+            "axis": { "type": "string" }
+          },
+          "description": "Rotation at this keyframe (2D angle or 3D axis-angle, depending on context)."
+        },
+        "transform": {
+          "type": "object",
+          "description": "Generic transformation definition (could be translate/rotate/scale etc., as per VectorDiff semantics).",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "frame": {
+      "type": "object",
+      "required": [ "t" ],
+      "properties": {
+        "t": { "type": "number" },
+        "state": { 
+          "type": "object",
+          "description": "Full state of the object at time t (e.g., absolute position/orientation).",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "introspectionData": {
+      "type": "object",
+      "description": "AI introspection information accompanying the tracks.",
+      "properties": {
+        "selfModel": {
+          "type": "object",
+          "description": "Metadata or representation of the AI model.",
+          "additionalProperties": true
+        },
+        "traces": {
+          "type": "array",
+          "description": "List of decision trace entries.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "step": { "type": "number" },
+              "decision": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        },
+        "attention": {
+          "type": "array",
+          "description": "List of attention points over time.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "t": { "type": "number" },
+              "targetId": { "type": "string" },
+              "score": { "type": "number" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
 
