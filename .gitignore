@@ -1,1 +1,9 @@
+# Dependency directory and build output
+node_modules/
+dist/
+
+# OS / editor files
+.DS_Store
+*.log
+.env
 
