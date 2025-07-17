@@ -1,5 +1,5 @@
 import React from 'react';
-import { Track } from 'sentio-core/src/index.js';
+import { Track } from '../../sentio-core/src/index.js';
 
 interface Props {
   tracks: Track[];
