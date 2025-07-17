@@ -1,13 +1,28 @@
 {
+  "version": "0.1",
   "name": "Basic Example",
   "tracks": [
     {
       "id": "track1",
-      "data": [1, 2, 3]
+      "kind": "signal",
+      "data": {
+        "samples": [
+          { "t": 0, "value": 1 },
+          { "t": 1, "value": 2 },
+          { "t": 2, "value": 3 }
+        ]
+      }
     },
     {
       "id": "track2",
-      "data": [2, 3, 4]
+      "kind": "signal",
+      "data": {
+        "samples": [
+          { "t": 0, "value": 2 },
+          { "t": 1, "value": 3 },
+          { "t": 2, "value": 4 }
+        ]
+      }
     }
   ],
   "differences": [
@@ -18,4 +33,3 @@
     }
   ]
 }
-
