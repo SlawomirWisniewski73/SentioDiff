@@ -1,6 +1,8 @@
-export interface Track {
+export interface Track<T = any> {
   id: string;
-  data: number[];
+  kind: string; // np. "geometry", "signal"
+  data: T;
+  meta?: Record<string, any>;
 }
 
 export interface Difference {
