@@ -1,1 +1,21 @@
+{
+  "name": "Basic Example",
+  "tracks": [
+    {
+      "id": "track1",
+      "data": [1, 2, 3]
+    },
+    {
+      "id": "track2",
+      "data": [2, 3, 4]
+    }
+  ],
+  "differences": [
+    {
+      "from": "track1",
+      "to": "track2",
+      "distance": 2.449
+    }
+  ]
+}
 
