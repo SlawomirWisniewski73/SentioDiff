@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // Zmieniamy import - zamiast klasy 'Validator', importujemy funkcję 'validateSentio'
-import { validateSentio } from '../sentio-core/src/validator'; 
+import { validateSentio } from '../sentio-core/src/validator.js'; 
 import * as fs from 'fs';
 
 const [inputPath] = process.argv.slice(2);
