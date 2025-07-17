@@ -1,7 +1,8 @@
-import { SentioData } from './types';
+import { SentioDoc } from "./types";
 
-export function parse(input: unknown): SentioData {
-  // W rzeczywistej implementacji nastąpiłaby transformacja/normalizacja danych.
-  // Tutaj zakładamy, że input odpowiada już strukturze SentioData.
-  return input as SentioData;
+export function parseSentio(json: any): SentioDoc {
+  if (!json.version || !json.entities) {
+    throw new Error("Invalid SentioDiff document: missing required fields.");
+  }
+  return json as SentioDoc;
 }
