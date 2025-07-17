@@ -1,4 +1,4 @@
-import { SentioData } from 'sentio-core/src/index.js';
+import { SentioData } from '../../sentio-core/src/index.js';
 
 export function visualizeTrace(data: SentioData): void {
   if (data.trace && data.trace.length > 0) {
