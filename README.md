@@ -1,7 +1,7 @@
 # SentioDiff
 VectorDiff evo-revo
 
-## A.Wersja polska
+## A. Wersja polska
 ## B. English version
 ---
 
