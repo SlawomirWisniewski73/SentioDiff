@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { parse } from 'sentio-core/parser';
+import { parse } from 'sentio-core/src/index.js';
 
 export function importCsv(filePath: string): any {
   const content = fs.readFileSync(filePath, 'utf-8');
