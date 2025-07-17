@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { SvgRenderer } from '../sentio-viz/src/SvgRenderer';
-import { ThreeRenderer } from '../sentio-viz/src/ThreeRenderer';
+import { SvgRenderer } from '../sentio-viz/src/SvgRenderer.js';
+import { ThreeRenderer } from '../sentio-viz/src/ThreeRenderer.js';
 import * as fs from 'fs';
 
 const [mode, inputPath] = process.argv.slice(2);
