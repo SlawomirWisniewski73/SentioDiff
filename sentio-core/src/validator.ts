@@ -1,13 +1,14 @@
-import Ajv from 'ajv';
-import schema from '../../sentio.schema.json';
-import { SentioData } from './types';
+import Ajv from "ajv";
+import schema from "../../sentio.schema.json";
 
-const ajv = new Ajv();
-const validateFn = ajv.compile(schema);
+const ajv = new Ajv({ allErrors: true });
+const validate = ajv.compile(schema);
 
-export class Validator {
-  validate(data: unknown): data is SentioData {
-    const valid = validateFn(data);
-    return !!valid;
+export function validateSentio(doc: any): boolean {
+  const valid = validate(doc);
+  if (!valid) {
+    console.error(validate.errors);
+    throw new Error("SentioDiff validation failed");
   }
+  return true;
 }
