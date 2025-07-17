@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { Validator } from '../sentio-core/src/validator';
+// Zmieniamy import - zamiast klasy 'Validator', importujemy funkcję 'validateSentio'
+import { validateSentio } from '../sentio-core/src/validator'; 
 import * as fs from 'fs';
 
 const [inputPath] = process.argv.slice(2);
@@ -12,16 +13,15 @@ if (!inputPath) {
 try {
   const fileContent = fs.readFileSync(inputPath, 'utf-8');
   const data = JSON.parse(fileContent);
-  const validator = new Validator();
-  const valid = validator.validate(data);
-  if (valid) {
-    console.log('File is valid according to schema.');
-  } else {
-    console.error('Validation failed: data does not match schema.');
-    process.exit(2);
-  }
-} catch (err) {
-  console.error('Error reading or validating file:', err);
-  process.exit(3);
-}
 
+  // Bezpośrednio wywołujemy funkcję walidującą
+  validateSentio(data);
+
+  // Jeśli funkcja nie rzuci błędu, to znaczy, że walidacja się powiodła
+  console.log(`✅ File ${inputPath} is valid according to the schema.`);
+
+} catch (err) {
+  // Błąd zostanie złapany, jeśli walidacja się nie powiedzie lub plik jest nieprawidłowy
+  console.error(`❌ Error validating file ${inputPath}:`, (err as Error).message);
+  process.exit(1);
+}
