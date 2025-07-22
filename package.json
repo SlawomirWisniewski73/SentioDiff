@@ -1,29 +1,22 @@
-
 {
   "name": "sentio-diff",
   "version": "0.1.0",
-  "description": "SentioDiff – biblioteka do wizualizacji ro\u017cnic danych i introspekcji",
+  "description": "SentioDiff biblioteka do wizualizacji rożnic danych i introspekcji",
   "license": "AGPL",
   "type": "module",
   "main": "dist/sentio-core/src/index.js",
-  "bin": {
-    "sentio-validate": "dist/scripts/sentio-validate.js",
-    "sentio-render": "dist/scripts/sentio-render.js",
-    "sentio-to-vector": "dist/scripts/sentio-to-vector.js"
-  },
+  "types": "dist/sentio-core/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build",
-    "test": "echo \"No tests specified\" && exit 0",
-    "validate": "npm run build && node dist/scripts/sentio-validate.js examples/basic_example.json && node dist/scripts/sentio-validate.js examples/introspection_demo.json"
+    "prepare": "npm run build"
   },
   "dependencies": {
-    "ajv": "^8.12.0",
-    "lit": "^3.1.4"
+    "ajv": "^8.12.0"
   },
   "devDependencies": {
-    "@types/node": "^20.14.2",
-    "@types/three": "^0.165.0",
     "typescript": "^5.1.0",
     "react": "^18.2.0",
     "@types/react": "^18.0.28"
