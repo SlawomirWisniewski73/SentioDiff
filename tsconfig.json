@@ -2,8 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
-    "experimentalDecorators": true, // Dodaję tę linię
-    "moduleResolution": "node",
+    "declaration": true,
     "outDir": "dist",
     "rootDir": ".",
     "esModuleInterop": true,
@@ -23,12 +22,5 @@
     "sentio-introspect/src",
     "sentio-bridge/src",
     "scripts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "examples",
-    "docs"
   ]
 }
-
