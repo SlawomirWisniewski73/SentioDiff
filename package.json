@@ -1,8 +1,8 @@
 {
-  "name": "sentio-diff",
+  "name": "@sentiodiff/core",
   "version": "0.1.0",
   "description": "SentioDiff biblioteka do wizualizacji rożnic danych i introspekcji",
-  "license": "MIT",
+  "license": "AGPL",
   "type": "module",
   "main": "dist/sentio-core/src/index.js",
   "types": "dist/sentio-core/src/index.d.ts",
