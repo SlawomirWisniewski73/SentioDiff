@@ -3,6 +3,18 @@ VectorDiff evo-revo
 
 ## A. Wersja polska
 ## B. English version
+
+## Strona projektu --> https://vectordiff.org/sentiodiff
+
+### How to cite:
+Wiśniewski, Sławomir (2025). <b> SentioDiff: A Conceptual Framework for Artificial Intelligence Introspection and Semantic Dynamic Data Representation. </b> Figshare preprint. https://doi.org/10.6084/m9.figshare.29646194.v1
+
+---
+### Support the project
+https://pay.vivawallet.com/scibiz
+
+---
+## A. Wersja polska
 ---
 
 ```markdown
